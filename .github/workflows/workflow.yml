@@ -64,8 +64,9 @@ jobs:
         pip freeze
         pipdeptree
         
-deploy:
+  publish:
     runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@master
       - name: Set up Python 3.9
         uses: actions/setup-python@v1

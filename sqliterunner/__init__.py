@@ -2,7 +2,7 @@ from sqlite3 import connect
 
 
 def make_sql_query(dbfile, query, commit=True, fetch=False):
-    fetchtypes = ['one', 'all']
+    fetchtypes = ['one', 'all', False]
     if fetch not in fetchtypes:
         raise ValueError(f'{fetch} is not one of {fetchtypes}')
     if commit and fetch:

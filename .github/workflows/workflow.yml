@@ -10,7 +10,7 @@ jobs:
   build:
 
     runs-on: {{ matrix.os }}
-    stratergy:
+    strategy:
       matrix:
         os: ['windows-latest', 'macos-latest', 'ubuntu-latest']
         python: ['3.6', '3.7', '3.8', '3.8-dev', '3.9', '3.9-dev', '3.10-dev']

@@ -12,8 +12,8 @@ with open('dev-requirements.txt') as dev_requirements_file:
 
 setup(
     name='sqliterunner',
-    version='0.0.1',
-    url='https://github.com/Pycryptor10/sqlite-runne',
+    version='0.0.2',
+    url='https://github.com/Pycryptor10/sqlite-runner',
     description='Simple script for making SQL Queries easier.',
     long_description=readme,  # + '\n\n' + history,
     long_description_content_type='text/markdown',  # This is important!

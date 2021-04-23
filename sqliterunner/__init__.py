@@ -9,7 +9,7 @@ def make_sql_query(dbfile, query, commit=True, fetch=False):
         raise ValueError("You can not commit & fetch an sql query.")
     if not commit and not fetch:
         raise ValueError("One of commit or fetch must be True.")
-    with dbconn as connect(dbfile):
+    with connect(dbfile) as dbconn:
         dbconn = connect(dbfile)
         queryres = dbconn.execute(query)
         if commit:

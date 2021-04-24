@@ -56,6 +56,8 @@ jobs:
         pip show sqliterunner
     - name: Lint with flake8
       run: flake8 . --max-line-length=175
+    - name: Run tests
+      run: pytest
     - name: Verify dependencies
       run: |
         pip check

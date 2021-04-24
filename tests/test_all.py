@@ -49,4 +49,3 @@ def test_commit():
     assert query
     selectq = make_sql_query("tests/data/game.db", "SELECT * from tokens", commit=False, fetch='one')
     assert selectq == (1, 'blah1', 'blah2', 'blah3', 'blah4')
-

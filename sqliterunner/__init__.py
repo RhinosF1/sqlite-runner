@@ -10,7 +10,6 @@ def make_sql_query(dbfile, query, commit=True, fetch=False):
     if not commit and not fetch:
         raise ValueError("One of commit or fetch must be True.")
     with connect(dbfile) as dbconn:
-        dbconn = connect(dbfile)
         queryexec = dbconn.execute(query)
         if commit:
             dbconn.commit()
@@ -20,7 +19,5 @@ def make_sql_query(dbfile, query, commit=True, fetch=False):
         elif fetch == 'one':
             queryres = queryexec.fetchone()
         else:
-            dbconn.close()  # for sanity
             raise Exception("Fatal: Request not understood.")
-        dbconn.close()  # for sanity
     return queryres

@@ -1,5 +1,6 @@
 from sqliterunner import make_sql_query
 
+
 def test_garbage_fetch():
     failed = False
     try:
@@ -18,6 +19,7 @@ def test_commit_fetch():
         assert str(e) == 'You can not commit & fetch an sql query.'
         failed = True
     assert failed
+
 
 def test_c_f_false():
     failed = False
@@ -41,9 +43,10 @@ def test_selectall():
         (2, 'Test_user1606823952.380141', '8eaa1e0')
         ]
 
+
 def test_commit():
     query = make_sql_query("tests/data/game.db", "INSERT INTO tokens (public_key, private_key, not_valid_before, not_valid_after) VALUES ('blah1', 'blah2', 'blah3', 'blah4')")
     assert query
     selectq = make_sql_query("tests/data/game.db", "SELECT * from tokens", commit=False, fetch='one')
     assert selectq == (1, 'blah1', 'blah2', 'blah3', 'blah4')
-    
+

@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.6'
+        python-version: ${{ matrix.python }}
     - name: Install Caches (Linux)
       uses: actions/cache@v2
       if: startsWith(runner.os, 'Linux')
@@ -55,7 +55,7 @@ jobs:
         pip --version
         pip show sqliterunner
     - name: Lint with flake8
-      run: flake8 . --max-line-length=175
+      run: flake8 .
     - name: Run tests
       run: pytest
     - name: Verify dependencies

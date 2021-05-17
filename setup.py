@@ -6,6 +6,10 @@ with open('README.md') as readme_file:
 # with open('CHANGELOG.md') as history_file:
     # history = history_file.read()
 
+with open('requirements.txt') as requirements_file:
+    requirements = list(requirements_file.readlines())
+
+
 with open('dev-requirements.txt') as dev_requirements_file:
     dev_requirements = list(dev_requirements_file.readlines())
 
@@ -21,6 +25,7 @@ setup(
     author_email='Pycryptor10@gmail.com',
     packages=find_packages('.'),
     include_package_data=True,
+    install_requires=requirements,
     tests_require=dev_requirements,
     test_suite='tests',
     license='GPL3',

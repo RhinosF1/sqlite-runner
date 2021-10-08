@@ -13,13 +13,13 @@ jobs:
     strategy:
       matrix:
         os: ['windows-latest', 'macos-latest', 'ubuntu-latest']
-        python: ['3.6', '3.7', '3.8', '3.8-dev', '3.9', '3.9-dev', '3.10-dev']
+        python: ['3.8', '3.9', '3.9-dev', '3.10', '3.10-dev']
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.6'
+        python-version: ${{ matrix.python }}
     - name: Install Caches (Linux)
       uses: actions/cache@v2
       if: startsWith(runner.os, 'Linux')

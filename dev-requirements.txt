@@ -1,5 +1,5 @@
 flake8==6.0.0
-pipdeptree==2.7.0
+pipdeptree==2.9.3
 pytest==7.3.2
 setuptools==67.6.1
 wheel==0.40.0

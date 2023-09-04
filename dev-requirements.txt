@@ -3,4 +3,4 @@ pipdeptree==2.9.3
 pytest==7.4.0
 setuptools==67.8.0
 wheel==0.40.0
-build==0.10.0
+build==1.0.0
